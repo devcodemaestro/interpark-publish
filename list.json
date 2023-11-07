@@ -1,0 +1,105 @@
+{
+  "total": 8,
+  "good_1": {
+    "image": "images/live1.png",
+    "live-info": {
+      "badge": "방송예정",
+      "title": "[에듀트립] 글로벌 캠프 첫방 기념 최초 할인! 채팅 참여만 해도 경품 추첨"
+    },
+    "live-day": {
+      "date": "11월 08일 (수)",
+      "time": "11:00"
+    },
+    "live-good": {
+      "footer-img": "images/live-footer1.png",
+      "desc": "새로운 여행, 컨셉 트립 기획전",
+      "benefit": "",
+      "price": "",
+      "url": "a.html"
+    }
+  },
+  "good_2": {
+    "image": "images/live2.jpg",
+    "badge": "방송예정",
+    "title": "제주 자연 속에서 즐기는 온전한 쉼 ✨ 파르나스 호텔 제주",
+    "date": "11월 23일 (목)",
+    "time": "19:00",
+    "footer-img": "",
+    "desc": "",
+    "benefit": "",
+    "price": "",
+    "url": "a.html"
+  },
+  "good_3": {
+    "image": "images/live3.png",
+    "badge": "VOD",
+    "title": "네스트호텔 최대 73% 라이브특가",
+    "date": "11월 08일 (수)",
+    "time": "11:00",
+    "footer-img": "images/live-footer3.jpg",
+    "desc": "네스트호텔 라이브특가 구매하러 가기!",
+    "benefit": "73",
+    "price": "125100",
+    "url": "a.html"
+  },
+  "good_4": {
+    "image": "images/live4.jpg",
+    "badge": "VOD",
+    "title": "[나트랑] 스완도르 올인클루시브 5일 70만원대~",
+    "date": "",
+    "time": "",
+    "footer-img": "images/live-footer4.png",
+    "desc": "[카쇼라X스완도르 리조트] 올인클루시브 나트랑 3박 5일",
+    "benefit": "",
+    "price": "749000",
+    "url": "a.html"
+  },
+  "good_5": {
+    "image": "images/live5.jpg",
+    "badge": "VOD",
+    "title": "전라도 특집 여수/전주/광주",
+    "date": "",
+    "time": "",
+    "footer-img": "images/live-footer5.png",
+    "desc": "히든베이 호텔",
+    "benefit": "81",
+    "price": "84950",
+    "url": "a.html"
+  },
+  "good_6": {
+    "image": "images/live6.jpg",
+    "badge": "VOD",
+    "title": "진에어 동계 잔여석 & 3월 출발 단독 특가! 방송 중에만 제휴카드로 결제시 15% 추가 할인 🎁",
+    "date": "",
+    "time": "",
+    "footer-img": "images/live-footer6.jpg",
+    "desc": "[실시간 항공권] 인천 ↔ 오사카",
+    "benefit": "",
+    "price": "217900",
+    "url": "a.html"
+  },
+  "good_7": {
+    "image": "images/live7.jpg",
+    "badge": "VOD",
+    "title": "용평리조트 최대 85% 라이브 특가! 7만원대~",
+    "date": "",
+    "time": "",
+    "footer-img": "images/live-footer7.jpg",
+    "desc": "용평리조트",
+    "benefit": "80",
+    "price": "72000",
+    "url": "a.html"
+  },
+  "good_8": {
+    "image": "images/live8.jpg",
+    "badge": "VOD",
+    "title": "[이달의 여행] 코타키나발루 특가를 다 모았다!",
+    "date": "",
+    "time": "",
+    "footer-img": "images/live-footer8.jpg",
+    "desc": "[이달의 여행] 코타키나발루 특가모음🎉",
+    "benefit": "",
+    "price": "",
+    "url": "a.html"
+  }
+}

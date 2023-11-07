@@ -61,6 +61,7 @@
   height: 18px;
   display: block;
   margin: 0 auto;
+  z-index: 2;
   background: url("../images/slider_arrow.svg") no-repeat center;
   transform: rotateY(180deg);
 }
