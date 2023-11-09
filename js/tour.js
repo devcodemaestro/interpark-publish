@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
 
     for (let i = 0; i < _res.total; i++) {
       const index = i + 1;
-      const obj = _res["good_" + index];
+      const obj = _res["tour_" + index];
 
       const tempTag = `
       <div class="swiper-slide">

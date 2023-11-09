@@ -49,55 +49,57 @@ window.addEventListener("load", function () {
       let tempTag = "";
       if (i !== _res.total - 1) {
         tempTag = `
-      <li class="live-slide-box">
-      <div class="live-slide-item">
-        <a href="${obj.url}" class="live-link">
-          <div class="live-img">
-            <img src="${obj.image}" alt="${obj.title}" />
-          </div>
-          <div class="live-link-header">
-            <i class="live-link-header-badge">${obj.badge}</i>
-            <p class="live-link-header-title">
-            ${obj.title}
-            </p>
-          </div>
-          <div class="live-link-middle">
-            <div class="live-link-middle-info">
-              <p class="live-link-middle-date">
-                ${obj.date}
-              </p>
-              <p class="live-link-middle-time">${obj.time}</p>
-            </div>
-          </div>
-        </a>
-        <div class="live-link-footer">
-          <a
-            href="https://events.interpark.com/exhibition?exhibitionCode=230327007"
-          >
-            <div class="live-link-footer-img">
-              <img src="${
-                obj.footer_img === "" ? "" : obj.footer_img
-              }" alt="" />
-            </div>
-            <div class="live-link-footer-info">
-              <p class="live-link-footer-info-desc">
-                ${obj.desc}
-              </p>
-              <div class="live-link-footer-price">
-                <span class="live-link-footer-price-percent">
-                  <em></em><span>${
-                    obj.benefit === "" ? "" : obj.benefit + "%"
-                  }</span>
-                </span>
-                <span> <em>${numberWithCommas(obj.price)}</em><span>${
+      <ul class="swiper-slide">
+        <li class="live-slide-box">
+          <div class="live-slide-item">
+            <a href="${obj.url}" class="live-link">
+              <div class="live-img">
+                <img src="${obj.image}" alt="${obj.title}" />
+              </div>
+              <div class="live-link-header">
+                <i class="live-link-header-badge">${obj.badge}</i>
+                <p class="live-link-header-title">
+                ${obj.title}
+                </p>
+              </div>
+              <div class="live-link-middle">
+                <div class="live-link-middle-info">
+                  <p class="live-link-middle-date">
+                    ${obj.date}
+                  </p>
+                  <p class="live-link-middle-time">${obj.time}</p>
+                </div>
+              </div>
+            </a>
+            <div class="live-link-footer">
+              <a
+                href="https://events.interpark.com/exhibition?exhibitionCode=230327007"
+              >
+                <div class="live-link-footer-img">
+                  <img src="${
+                    obj.footer_img === "" ? "" : obj.footer_img
+                  }" alt="" />
+                </div>
+                <div class="live-link-footer-info">
+                  <p class="live-link-footer-info-desc">
+                    ${obj.desc}
+                  </p>
+                  <div class="live-link-footer-price">
+                    <span class="live-link-footer-price-percent">
+                      <em></em><span>${
+                        obj.benefit === "" ? "" : obj.benefit + "%"
+                      }</span>
+                    </span>
+                    <span> <em>${numberWithCommas(obj.price)}</em><span>${
           obj.price === "" ? "" : "원"
         }</span> </span>
-              </div>
+                  </div>
+                </div>
+              </a>
             </div>
-          </a>
-        </div>
-      </div>
-    </li>
+          </div>
+        </li>
+      </ul>
       `;
       } else {
         tempTag = `
@@ -121,7 +123,7 @@ window.addEventListener("load", function () {
   }
 
   function showHtmlTag(_html) {
-    const liveSlide = ".live-slide .swiper-wrapper";
+    const liveSlide = ".live-slide-list";
     const tag = document.querySelector(liveSlide);
     tag.innerHTML = _html;
 
@@ -129,7 +131,7 @@ window.addEventListener("load", function () {
   }
 
   function makeSwiper() {
-    const swiperTicket = new Swiper(".live-slide-list", {
+    const swiperLive = new Swiper(".live-slide-list", {
       slidesPerView: 4,
       spaceBetween: 27,
       navigation: {
