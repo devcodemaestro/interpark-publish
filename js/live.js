@@ -45,69 +45,89 @@ window.addEventListener("load", function () {
     for (let i = 0; i < _res.total; i++) {
       const index = i + 1;
       const obj = _res["good_" + index];
+      const objLiveInfo = obj["live-info"];
+      const objLiveDay = obj["live-day"];
+      const objLiveGood = obj["live-good"];
 
       let tempTag = "";
+
       if (i !== _res.total - 1) {
         tempTag = `
-      <ul class="swiper-slide">
-        <li class="live-slide-box">
+        <div class="swiper-slide">
           <div class="live-slide-item">
-            <a href="${obj.url}" class="live-link">
+            <a href="${objLiveInfo.url}" class="live-link">
               <div class="live-img">
-                <img src="${obj.image}" alt="${obj.title}" />
+                <img src="${objLiveInfo.image}" alt="" />
               </div>
-              <div class="live-link-header">
-                <i class="live-link-header-badge">${obj.badge}</i>
-                <p class="live-link-header-title">
-                ${obj.title}
-                </p>
-              </div>
-              <div class="live-link-middle">
-                <div class="live-link-middle-info">
-                  <p class="live-link-middle-date">
-                    ${obj.date}
-                  </p>
-                  <p class="live-link-middle-time">${obj.time}</p>
-                </div>
+              <div class="live-info">
+                <ul class="live-good-list">
+                  <li class="live-link-header">
+                    <i class="live-link-header-badge">${objLiveInfo.badge}</i>
+                    <p class="live-link-header-title">
+                    ${objLiveInfo.title}
+                    </p>
+                  </li>
+                  <li class="live-link-middle">
+                    <div class="live-link-middle-info">
+                      <p class="live-link-middle-date">
+                        ${objLiveDay.date}
+                      </p>
+                      <p class="live-link-middle-time">${objLiveDay.time}</p>
+                    </div>
+                  </li>
+                  <li class="live-link-footer">
+
+                    ${
+                      objLiveGood["footer-img"] === ""
+                        ? ``
+                        : `
+                        <a
+                        href="https://events.interpark.com/exhibition?exhibitionCode=230327007"
+                      >
+                          <div class="live-link-footer-img"><img src="${
+                            objLiveGood["footer-img"]
+                          }" alt="" /></div>
+                            <div class="live-link-footer-info">
+                          <p class="live-link-footer-info-desc">
+                            ${objLiveGood.desc}
+                          </p>
+                        <div>
+                          <span
+                            class="live-link-footer-price-percent"
+                            >${
+                              objLiveGood.benefit === ""
+                                ? ""
+                                : objLiveGood.benefit + "%"
+                            }</span>
+                          <span class="live-link-footer-price">${numberWithCommas(
+                            objLiveGood.price
+                          )}</span>
+                          </div>
+                        </div>
+                      </a>
+                          `
+                    }
+                      
+                  </li>
+                </ul>
               </div>
             </a>
-            <div class="live-link-footer">
-              <a
-                href="https://events.interpark.com/exhibition?exhibitionCode=230327007"
-              >
-                <div class="live-link-footer-img">
-                  <img src="${
-                    obj.footer_img === "" ? "" : obj.footer_img
-                  }" alt="" />
-                </div>
-                <div class="live-link-footer-info">
-                  <p class="live-link-footer-info-desc">
-                    ${obj.desc}
-                  </p>
-                  <div class="live-link-footer-price">
-                    <span class="live-link-footer-price-percent">
-                      <em></em><span>${
-                        obj.benefit === "" ? "" : obj.benefit + "%"
-                      }</span>
-                    </span>
-                    <span> <em>${numberWithCommas(obj.price)}</em><span>${
-          obj.price === "" ? "" : "원"
-        }</span> </span>
-                  </div>
-                </div>
-              </a>
-            </div>
           </div>
-        </li>
-      </ul>
+        </div>
       `;
       } else {
         tempTag = `
         <div class="swiper-slide">
-          <a>전체보기</a>
-        </div>
+        <div class="seeAll">
+          <a href="#" class="seeAll-a">
+            <i></i>
+            <p>전체보기</p>
+          </a>
+        </div>            
+      </div>
       `;
       }
+      console.log(tempTag);
       htmlTicketTag += tempTag;
     }
     showHtmlTag(htmlTicketTag);
@@ -123,7 +143,7 @@ window.addEventListener("load", function () {
   }
 
   function showHtmlTag(_html) {
-    const liveSlide = ".live-slide-list";
+    const liveSlide = ".live-slide .swiper-wrapper";
     const tag = document.querySelector(liveSlide);
     tag.innerHTML = _html;
 
@@ -131,7 +151,7 @@ window.addEventListener("load", function () {
   }
 
   function makeSwiper() {
-    const swiperLive = new Swiper(".live-slide-list", {
+    const swiperLive = new Swiper(".live-slide", {
       slidesPerView: 4,
       spaceBetween: 27,
       navigation: {
